@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./App.css";
 import About from "./components/About/About";
 import Advantages from "./components/Advantages/Advantages";
@@ -8,12 +9,13 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 
 function App() {
+  const refAbout = useRef(null)
   return (
     <>
       <Header />
       <Hero />
       <Advantages />
-      <About />
+      <About compRef={refAbout}/>
       <ContactsForm />
       <Faq />
       <Footer />
